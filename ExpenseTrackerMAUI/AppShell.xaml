@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="ExpenseTracker.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:ExpenseTracker"
+    xmlns:views="clr-namespace:ExpenseTracker.Views"
+    Title="ExpenseTracker">
+
+    <TabBar>
+        <ShellContent Title="Projects" ContentTemplate="{DataTemplate views:ProjectsPage}" Route="ProjectsPage" />
+    </TabBar>
+
+    <ShellContent Title="ProjectDetails" ContentTemplate="{DataTemplate views:ProjectDetailsPage}" Route="ProjectDetailsPage" />
+    <ShellContent Title="AddExpense" ContentTemplate="{DataTemplate views:AddExpensePage}" Route="AddExpensePage" />
+
+</Shell>

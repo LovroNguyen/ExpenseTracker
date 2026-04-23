@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ExpenseTracker.Views.ProjectDetailsPage"
+             Title="Project Details">
+    <VerticalStackLayout Padding="12" Spacing="8">
+        <!-- Project Info -->
+        <Border StrokeThickness="2" Stroke="Purple" Padding="12">
+            <VerticalStackLayout Spacing="4">
+                <Label Text="{Binding ProjectName}" FontAttributes="Bold" FontSize="18" />
+                <Label Text="{Binding ProjectCode, StringFormat='Code: {0}'}" FontSize="12" />
+                <Label Text="{Binding ProjectStartDate, StringFormat='Start: {0}'}" FontSize="12" />
+                <Label Text="{Binding ProjectStatus, StringFormat='Status: {0}'}" FontSize="12" />
+            </VerticalStackLayout>
+        </Border>
+
+        <!-- Add Expense Button -->
+        <Button Text="Add New Expense" 
+                Command="{Binding AddExpenseCommand}" 
+                Padding="10,12"
+                FontSize="16" />
+
+        <!-- Expenses List -->
+        <Label Text="Expenses:" FontAttributes="Bold" FontSize="14" />
+
+        <CollectionView ItemsSource="{Binding Expenses}" SelectionMode="None">
+            <CollectionView.EmptyView>
+                <VerticalStackLayout Padding="20" Spacing="4">
+                    <Label Text="No expenses yet" 
+                           FontSize="14" 
+                           HorizontalTextAlignment="Center" />
+                </VerticalStackLayout>
+            </CollectionView.EmptyView>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Border StrokeThickness="1" Stroke="Gray" Padding="8" Margin="0,4">
+                        <VerticalStackLayout Spacing="2">
+                            <Label Text="{Binding ExpenseCode, StringFormat='ID: {0}'}" FontSize="12" FontAttributes="Bold" />
+                            <Label Text="{Binding Amount, StringFormat='Amount: {0}'}" FontSize="12" />
+                            <Label Text="{Binding Date, StringFormat='Date: {0}'}" FontSize="11" />
+                            <Label Text="{Binding ExpenseType, StringFormat='Type: {0}'}" FontSize="11" />
+                            <Label Text="{Binding PaymentStatus, StringFormat='Status: {0}'}" FontSize="11" TextColor="Gray" />
+                        </VerticalStackLayout>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </VerticalStackLayout>
+</ContentPage>

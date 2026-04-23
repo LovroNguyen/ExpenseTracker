@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ExpenseTracker.Views.ProjectsPage"
+             Title="Projects">
+    <VerticalStackLayout Padding="12" Spacing="8">
+        <Label Text="{Binding DebugInfo}" TextColor="Orange" FontSize="12" />
+
+        <Entry Placeholder="Search by name/date" Text="{Binding SearchText}" />
+
+        <Button Text="Refresh" Command="{Binding LoadCommand}" />
+
+        <CollectionView ItemsSource="{Binding FilteredProjects}">
+            <CollectionView.EmptyView>
+                <VerticalStackLayout Padding="20" Spacing="4">
+                    <Label Text="No projects found" FontSize="14" HorizontalTextAlignment="Center" />
+                </VerticalStackLayout>
+            </CollectionView.EmptyView>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Border StrokeThickness="2" Stroke="Purple" Padding="12" Margin="0,4">
+                        <VerticalStackLayout Spacing="4">
+                            <Label Text="{Binding Name}" FontAttributes="Bold" FontSize="16" />
+                            <Label Text="{Binding StartDate, StringFormat='Start: {0}'}" FontSize="12" />
+                            <Label Text="{Binding Status, StringFormat='Status: {0}'}" FontSize="12" />
+                            <Button Text="View Details"
+                                    Clicked="OnViewProjectDetails"
+                                    CommandParameter="{Binding .}"
+                                    Padding="10,8" />
+                        </VerticalStackLayout>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </VerticalStackLayout>
+</ContentPage>

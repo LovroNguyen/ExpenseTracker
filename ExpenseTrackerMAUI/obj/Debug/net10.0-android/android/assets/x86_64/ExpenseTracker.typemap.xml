@@ -1,0 +1,10 @@
+<api type="debug" assembly-name="ExpenseTracker" mvid="846dda21800442f99d1aa17a2ac58e6e">
+  <java-to-managed>
+    <entry java-name="crc64bcd202d4d657c024/MainActivity" managed-name="ExpenseTracker.MainActivity, ExpenseTracker" managed-type-token-id="33554449" />
+    <entry java-name="crc64bcd202d4d657c024/MainApplication" managed-name="ExpenseTracker.MainApplication, ExpenseTracker" managed-type-token-id="33554450" />
+  </java-to-managed>
+  <managed-to-java>
+    <entry java-name="crc64bcd202d4d657c024/MainActivity" managed-name="ExpenseTracker.MainActivity, ExpenseTracker" managed-type-token-id="33554449" />
+    <entry java-name="crc64bcd202d4d657c024/MainApplication" managed-name="ExpenseTracker.MainApplication, ExpenseTracker" managed-type-token-id="33554450" />
+  </managed-to-java>
+</api>

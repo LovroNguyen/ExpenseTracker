@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ExpenseTracker.Views.AddExpensePage"
+             Title="Add Expense">
+    <ScrollView>
+        <VerticalStackLayout Padding="12" Spacing="8">
+            <Label Text="{Binding ProjectName}" FontAttributes="Bold" FontSize="18" />
+            <Label Text="{Binding StatusMessage}" TextColor="Blue" FontSize="12" />
+
+            <Entry Placeholder="Expense ID *" Text="{Binding ExpenseCode}" />
+            <Entry Placeholder="Date YYYY-MM-DD *" Text="{Binding Date}" />
+            <Entry Placeholder="Amount *" Text="{Binding Amount}" Keyboard="Numeric" />
+            <Entry Placeholder="Currency *" Text="{Binding Currency}" />
+
+            <Label Text="Expense Type *" FontAttributes="Bold" />
+            <Picker ItemsSource="{Binding ExpenseTypes}" SelectedItem="{Binding ExpenseType}" />
+
+            <Label Text="Payment Method *" FontAttributes="Bold" />
+            <Picker ItemsSource="{Binding PaymentMethods}" SelectedItem="{Binding PaymentMethod}" />
+
+            <Entry Placeholder="Claimant *" Text="{Binding Claimant}" />
+
+            <Label Text="Payment Status *" FontAttributes="Bold" />
+            <Picker ItemsSource="{Binding PaymentStatuses}" SelectedItem="{Binding PaymentStatus}" />
+
+            <Entry Placeholder="Description" Text="{Binding Description}" />
+            <Entry Placeholder="Location (optional)" Text="{Binding LocationProperty}" />
+
+            <Button Text="Save Expense" Command="{Binding SaveExpenseCommand}" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="12dp">
+
+    <EditText
+        android:id="@+id/etSearchKeyword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Name/Description keyword" />
+
+    <EditText
+        android:id="@+id/etSearchDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Date keyword (YYYY-MM-DD)" />
+
+    <EditText
+        android:id="@+id/etSearchStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Status" />
+
+    <EditText
+        android:id="@+id/etSearchOwner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Owner" />
+
+    <EditText
+        android:id="@+id/etSearchCode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Project Code" />
+
+    <Button
+        android:id="@+id/btnRunSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Search" />
+
+    <ListView
+        android:id="@+id/listSearchResults"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+</LinearLayout>
